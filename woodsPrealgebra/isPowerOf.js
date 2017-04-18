@@ -1,5 +1,5 @@
 function isPowerOf(base, number){
-  if(number < 0.00000000008 || number > 999999999999999){ // cannot compute correct answers past these 2 limits
+  if(typeof(base) !== 'number' || typeof(number) !== 'number' || number < 0.00000000008 || number > 999999999999999){ // cannot compute correct answers past these 2 limits
     return null;
   }
   while(number < base){
@@ -27,4 +27,6 @@ function isPowerOf(base, number){
 // assertEquality(isPowerOf(10, 0.00000000001), null, 'lower limit'),
 // assertEquality(isPowerOf(4, 0.0625), true, 'integer less than 1 positive 2'),
 // assertEquality(isPowerOf(7, 7), true, 'integer equals power'),
+// assertEquality(isPowerOf('dog', 7), null, 'invalid base type'),
+// assertEquality(isPowerOf(7, 'cat'), null, 'invalid number type'),
 // assertEquality(isPowerOf(10, 10), true, 'integer equals power 2')]);

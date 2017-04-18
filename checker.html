@@ -1,20 +1,16 @@
 <script src="test.js"></script>
 <script src="woodsPrealgebra/placeValue.js"></script>
 <script>
-testRunner([assertEquality(isPowerOf(10, 15), false, 'integer not base 10'),
-assertEquality(isPowerOf(10, 1000001), false, 'integer not base 10 2'),
-assertEquality(isPowerOf(10, 1000000), true, 'base 10 positive'),
-assertEquality(isPowerOf(10, 9385720), true, 'base 10 positive 2'),
-assertEquality(isPowerOf(10, 9385720000000000000000000), null, 'greater than upper limit'),
-assertEquality(isPowerOf(7, 63), true, 'different base positive'),
-assertEquality(isPowerOf(7, 707), true, 'different base positive 2'),
-assertEquality(isPowerOf(10, 0.10001), false, 'integer not base 10 and less than 1'),
-assertEquality(isPowerOf(10, 0.000000002), false, 'integer not base 10 and less than 1 2'),
-assertEquality(isPowerOf(10, 0.00001), true, 'integer less than 1 positive'),
-assertEquality(isPowerOf(10, 0.00000000001), null, 'lower limit'),
-assertEquality(isPowerOf(4, 0.0625), true, 'integer less than 1 positive 2'),
-assertEquality(isPowerOf(7, 7), true, 'integer equals power'),
-assertEquality(isPowerOf(10, 10), true, 'integer equals power 2')]);
+testRunner([assertEquality(findOnesPlace('252342.342'), 5, 'index before decimal point is ones place'),
+assertEquality(findOnesPlace('-252342.342'), 6, 'index before decimal point is ones place with negative'),
+assertEquality(findOnesPlace('252.342'), 2, 'index before decimal point is ones place 2'),
+assertEquality(findOnesPlace('-252.342'), 3, 'index before decimal point is ones place with negative 2'),
+assertEquality(findOnesPlace('2520000'), 6, 'last index is ones place'),
+assertEquality(findOnesPlace('25dog000'), null, 'not a real number'),
+assertEquality(findOnesPlace('25.000.'), null, 'not a real number'),
+assertEquality(findOnesPlace('25.000'), 1, 'trailing 0s are fine'),
+assertEquality(findOnesPlace('--25000'), null, 'double negative sign'),
+assertEquality(findOnesPlace('2222'), 3, 'last index is ones place 2')])
 // assertEquality(placeValue(1930), true, 'integer is base 10 and greater than 1')
 // assertEquality(placeValue(1938.348, 10), 3, 'tens place')
 // assertEquality(placeValue(1938.348, -1), null, 'negative place')

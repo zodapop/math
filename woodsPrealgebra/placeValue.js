@@ -30,16 +30,19 @@ function adjustPlace(desiredPlace, onesIdx){
 }
 
 function findOnesPlace(stringNumber){
-  for(let i = 0; i < stringNumber.length; i++){
+  if(!/^-?[0-9]\d+(\.\d+)?$/.test(stringNumber)){
+    return null;
+  }
+  for(var i = 0; i < stringNumber.length; i++){
     if(stringNumber[i] == '.'){
       return i - 1;
     }
   }
-  return i;
+  return i - 1;
 }
 
 function isPowerOf(base, number){
-  if(number < 0.00000000008 || number > 999999999999999){ // cannot compute correct answers past these 2 limits
+  if(typeof(base) !== 'number' || typeof(number) !== 'number' || number < 0.00000000008 || number > 999999999999999){ // cannot compute correct answers past these 2 limits
     return null;
   }
   while(number < base){
@@ -52,4 +55,32 @@ function isPowerOf(base, number){
     return true;
   }
   return false;
+}
+
+class WholeNumber{
+  constructor(number){
+    if(typeof(number) !== 'number' || number < 0.00000000008 || number > 999999999999999){ // cannot compute correct answers past these 2 limits
+      return null;
+    }
+    this.number = number;
+  }
+  placeValue(place){
+    if(!place || place <= 0 || !isPowerOf(10, place)){
+      return null;
+    }
+    let stringNumber = '' + this.number,
+        onesIndex = this._findOnesPlace(stringNumber);
+    if(place == 1){
+      return stringNumber[onesIndex]*1;
+    }
+    return stringNumber[adjustPlace(place, onesIndex)]*1;
+  }
+  _findOnesPlace(stringNumber){
+    for(var i = 0; i < stringNumber.length; i++){
+      if(stringNumber[i] == '.'){
+        return i - 1;
+      }
+    }
+    return i - 1;
+  }
 }
