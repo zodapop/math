@@ -1,5 +1,5 @@
 function findOnesPlace(stringNumber){
-  if(!/^-?[0-9]\d+(\.\d+)?$/.test(stringNumber)){
+  if(stringNumber*1 === NaN){
     return null;
   }
   for(var i = 0; i < stringNumber.length; i++){
@@ -9,7 +9,7 @@ function findOnesPlace(stringNumber){
   }
   return i - 1;
 }
-
+//!/^-?[0-9]\d+(\.\d+)?$/.test(stringNumber)
 // testRunner([assertEquality(findOnesPlace('252342.342'), 5, 'index before decimal point is ones place'),
 // assertEquality(findOnesPlace('-252342.342'), 6, 'index before decimal point is ones place with negative'),
 // assertEquality(findOnesPlace('252.342'), 2, 'index before decimal point is ones place 2'),

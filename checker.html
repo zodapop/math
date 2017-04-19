@@ -1,21 +1,6 @@
 <script src="test.js"></script>
-<script src="woodsPrealgebra/placeValue.js"></script>
+<script src="woodsPrealgebra/wholeNumberClass.js"></script>
 <script>
-testRunner([assertEquality(findOnesPlace('252342.342'), 5, 'index before decimal point is ones place'),
-assertEquality(findOnesPlace('-252342.342'), 6, 'index before decimal point is ones place with negative'),
-assertEquality(findOnesPlace('252.342'), 2, 'index before decimal point is ones place 2'),
-assertEquality(findOnesPlace('-252.342'), 3, 'index before decimal point is ones place with negative 2'),
-assertEquality(findOnesPlace('2520000'), 6, 'last index is ones place'),
-assertEquality(findOnesPlace('25dog000'), null, 'not a real number'),
-assertEquality(findOnesPlace('25.000.'), null, 'not a real number'),
-assertEquality(findOnesPlace('25.000'), 1, 'trailing 0s are fine'),
-assertEquality(findOnesPlace('--25000'), null, 'double negative sign'),
-assertEquality(findOnesPlace('2222'), 3, 'last index is ones place 2')])
-// assertEquality(placeValue(1930), true, 'integer is base 10 and greater than 1')
-// assertEquality(placeValue(1938.348, 10), 3, 'tens place')
-// assertEquality(placeValue(1938.348, -1), null, 'negative place')
-// assertEquality(placeValue(1932348.348, 1000), 2, 'thousands place')
-// assertEquality(placeValue(1932348.348411, .001), 8, 'thousandths place')
-// assertEquality(placeValue(1938.348, 15), null, 'not base 10')
-// assertEquality(placeValue(1938.348, 0.0015), null, 'not base 10 and less than 10')
+let wholeNum = new WholeNumber(283);
+console.log(wholeNum.placeValue(10));
 </script>
