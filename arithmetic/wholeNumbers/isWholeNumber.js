@@ -1,7 +1,7 @@
 //<script src="arithmetic/wholeNumbers/isWholeNumber.js"></script>
 
 function isWholeNumber(number){
-  if(number > 0 && !isFloat(number)){
+  if(number >= 0 && !isFloat(number)){
     return true;
   }
   return false;
@@ -29,5 +29,5 @@ function isFloat(number){
 //   assertEquality(isWholeNumber(17.23535), false, 'is a float2'),
 //   assertEquality(isWholeNumber(-17.23535), false, 'is a neg float'),
 //   assertEquality(isWholeNumber(-535.11), false, 'is a neg float2'),
-//   assertEquality(isWholeNumber(0), false, 'zero is not a whole number')
+//   assertEquality(isWholeNumber(0), true, 'zero is a whole number')
 // ]);
