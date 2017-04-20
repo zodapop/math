@@ -1,7 +1,3 @@
-<script src="test.js"></script>
-<script src="arithmetic/wholeNumbers/isWholeNumber.js"></script>
-
-<script>
 function numberToExpandedForm(number){
   let stringNum       = number + '';
       power           = powerOfTen(findOnesPlace(stringNum)),
@@ -42,6 +38,3 @@ function powerOfTen(exp){
   }
   return value;
 }
-
-console.log(numberToExpandedForm(-8432612202));
-</script>

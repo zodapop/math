@@ -1,4 +1,4 @@
-function wordConvert(numberWord){
+function nameToExpanedForm(numberWord){
   let numberWords = {one: 1, two: 2, three: 3 , four: 4, five: 5, six: 6,
                     seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11,
                     twelve: 12, thirteen: 13, fourteen: 14,
@@ -12,7 +12,7 @@ function wordConvert(numberWord){
       answer = '',
       sign = ' + ',
       i = 0,
-      acceptedArr = ['thousand', 'million', 'billion', 'trillion'];
+      modifiers = ['thousand', 'million', 'billion', 'trillion'];
   if(numberWord[0] == 'n' && numberWord[1] == 'e'){
     sign = ' - ';
     i = 9;
