@@ -1,6 +1,30 @@
 <script src="test.js"></script>
 <script src="woodsPrealgebra/wholeNumberClass.js"></script>
 <script>
-let wholeNum = new WholeNumber(283);
-console.log(wholeNum.placeValue(10));
+let wholeNum  = new WholeNumber(283),
+    anotherWN = new WholeNumber(2893572),
+    stringNum = new WholeNumber('doggie'),
+    negNum    = new WholeNumber(-1000),
+    decNum    = new WholeNumber(1938.348)
+
+// console.log(stringNum);
+testRunner([
+// assertEquality(wholeNum.placeValue(100), 2, 'hundreds place'),
+// assertEquality(wholeNum.placeValue(-1), null, 'negative place'),
+// assertEquality(wholeNum.placeValue(15), null, 'invalid place'),
+// assertEquality(wholeNum.value, 283, 'value'),
+// assertEquality(anotherWN.value, 2893572, 'value2'),
+assertEquality(stringNum.placeValue(10), null, 'string input')
+]);
+
+// assertEquality(placeValue(1930, 100), 9, 'integer is base 10 and greater than 1'),
+// assertEquality(placeValue(1938.348, 10), 3, 'tens place'),
+// assertEquality(placeValue(1938.348, 1), 8, 'ones place'),
+// assertEquality(placeValue(1938.348, -1), null, 'negative place'),
+// assertEquality(placeValue(1932348.348, 1000), 2, 'thousands place'),
+// assertEquality(placeValue(1932348.348411, .001), 8, 'thousandths place'),
+// assertEquality(placeValue(1932348.348411, .1), 3, 'tenths place'),
+// assertEquality(placeValue(1932348.348411, 0.001), 8, 'sanity check'),
+// assertEquality(placeValue(1938.348, 15), null, 'not base 10'),
+// assertEquality(placeValue(1938.348, 0.0015), null, 'not base 10 and less than 10')
 </script>
