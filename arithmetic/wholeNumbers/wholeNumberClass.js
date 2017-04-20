@@ -1,4 +1,4 @@
-//<script src="woodsPrealgebra/wholeNumberClass.js"></script>
+//<script src="arithmetic/WholeNumbers/WholeNumberClass.js"></script>
 //lesson, save validation for front end inputs! 
 class WholeNumber{
   constructor(number){

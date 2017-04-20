@@ -1,3 +1,4 @@
+//<script src="arithmetic/WholeNumbers/findOnesPlace.js"></script>
 function findOnesPlace(stringNumber){
   if(stringNumber*1 === NaN){
     return null;

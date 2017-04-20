@@ -1,3 +1,4 @@
+//<script src="arithmetic/WholeNumbers/isPowerOf.js"></script>
 function isPowerOf(base, number){
   if(typeof(base) !== 'number' || typeof(number) !== 'number' || number < 0.00000000008 && number > 0 || number > 999999999999999 || base === 0){ // cannot compute correct answers past these 2 limits
     return null;

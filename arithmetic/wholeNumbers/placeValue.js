@@ -1,4 +1,4 @@
-//<script src="woodsPrealgebra/placeValue.js"></script>
+//<script src="arithmetic/WholeNumbers/placeValue.js"></script>
 
 function placeValue(number, place){
   if(typeof(number) !== 'number' || !isPowerOf(10, place)){
