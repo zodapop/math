@@ -4,13 +4,13 @@ function floor(number, place){
       rNumber = '';
   for(let i = 0; i < rPlace; i++){
     if(sNumber[i] == '.'){
-      return rNumber*1;
+      rNumber += '.';
     }
     rNumber += sNumber[i];
   }
   for(let i = rPlace; i < sNumber.length; i++){
     if(sNumber[i] == '.'){
-      return rNumber*1;
+      rNumber += '.';
     }
     rNumber += 0;
   }
@@ -117,3 +117,5 @@ function findOnesPlace(stringNumber){
   }
   return i - 1;
 }
+
+//console.log(floor(8432612202, 'thousands'));
