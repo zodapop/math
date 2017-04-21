@@ -38,3 +38,5 @@ function powerOfTen(exp){
   }
   return value;
 }
+
+//console.log(numberToExpandedForm(-8432612202));

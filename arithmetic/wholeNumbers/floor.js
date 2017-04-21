@@ -1,7 +1,3 @@
-<script src="test.js"></script>
-<script src="arithmetic/wholeNumbers/isWholeNumber.js"></script>
-
-<script>
 function floor(number, place){
   let sNumber = number + '',
       rPlace  = placeIndex(number, nameToNumber(place)),
@@ -121,6 +117,3 @@ function findOnesPlace(stringNumber){
   }
   return i - 1;
 }
-
-console.log(floor(8432612202, 'thousands'));
-</script>
